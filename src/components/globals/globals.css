@@ -1,0 +1,62 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  color: currentcolor;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.page {
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
+  font-family: var(--main-font);
+  font-variation-settings: var(--main-card-weight);
+  color: var(--accent-color);
+  background-image: var(--bg-gradient);
+  background-size: cover;
+  background-attachment: fixed;
+}

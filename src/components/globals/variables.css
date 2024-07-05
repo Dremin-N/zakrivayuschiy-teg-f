@@ -1,0 +1,15 @@
+/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --main-font: Inter-Variable;
+  --accent-font: "Press Start 2P Regular";
+  --main-card-weight: "wght" 400;
+  --accent-card-weight: "wght" 700;
+  --bg-color: #fff;
+  --difference-button-color: #fff;
+  --accent-color: #000;
+  --contour-color: #000;
+  --main-body-heart-color: #f00;
+  --bg-gradient: repeating-linear-gradient(to right, #d3d3d3, transparent 4px),
+    repeating-linear-gradient(to bottom, #d3d3d3, transparent 4px),
+    linear-gradient(to bottom, #e7e7e7 1vh, #1a1a1a);
+}

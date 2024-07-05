@@ -1,0 +1,8 @@
+dialog#modal-floppy.modal-floppy
+  .modal-floppy__content
+    .icon-container
+      svg.floppy-icon-modal(viewbox="0 0 21 21")
+        use(href="./icons/floppy.svg#floppy-icon")
+    h2.modal-floppy_header Вставьте дискету, чтобы продолжить
+  button.button.modal-floppy-button(onclick="window['modal-floppy'].close()")
+    span.button__text ОК
