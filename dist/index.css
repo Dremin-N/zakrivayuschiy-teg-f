@@ -1,0 +1,408 @@
+.card {
+  max-width: 700px;
+  background-color: var(--bg-color);
+  border: 2px solid var(--accent-color);
+  font-size: 18px;
+}
+
+.card__title {
+  font-variation-settings: var(--accent-card-weight);
+  font-size: inherit;
+  padding: 3px 10px;
+  border-bottom: 2px var(--accent-color);
+}
+
+.card__image-container {
+  position: relative;
+}
+
+.card__image {
+  width: 100%;
+  background-size: contain;
+  aspect-ratio: 1 / 1;
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.card__label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  mix-blend-mode: hard-light;
+  font-weight: 400;
+  font-size: 14px;
+  opacity: 0.5;
+  color: var(--accent-color);
+  font-family: var(--accent-font);
+  text-shadow: -1px 0 var(--bg-color), 0 1px var(--bg-color),
+    1px 0 var(--bg-color), 0 -1px var(--bg-color);
+}
+
+@supports (
+  (text-stroke: 1px var(--bg-color)) or
+    (-webkit-text-stroke: 1px var(--bg-color))
+) {
+  .card__label {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--bg-color);
+    text-stroke: 1px var(--bg-color);
+  }
+}
+
+.card__content {
+  padding: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 25px;
+}
+
+.card__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  padding: 0 25px 25px 0;
+  gap: 5px;
+}
+
+.card__like-button {
+  width: 130px;
+}
+
+.brightness {
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+}
+
+.contrast {
+  -webkit-filter: contrast(140%);
+          filter: contrast(140%);
+}
+
+.blur {
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+}
+
+.opacity {
+  -webkit-filter: opacity(0.3);
+          filter: opacity(0.3);
+}
+
+.grayscale {
+  -webkit-filter: grayscale(0.9);
+          filter: grayscale(0.9);
+}
+
+.saturate {
+  -webkit-filter: saturate(200%);
+          filter: saturate(200%);
+}
+
+.sepia {
+  -webkit-filter: sepia(100%);
+          filter: sepia(100%);
+}
+
+.sepia-contrast-brightness {
+  -webkit-filter: sepia(1) contrast(2) brightness(200%);
+          filter: sepia(1) contrast(2) brightness(200%);
+}
+
+.card__icon-button {
+  width: 38px;
+  height: 38px;
+  display: inline-block;
+  background-color: transparent;
+  border: 2px solid transparent;
+  -webkit-transition: border 0.3s ease;
+  -o-transition: border 0.3s ease;
+  transition: border 0.3s ease;
+  cursor: pointer;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--accent-color);
+}
+
+.like-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.core {
+  fill: transparent;
+  -webkit-transition: fill 0.3s linear 0.03s;
+  -o-transition: fill 0.3s linear 0.03s;
+  transition: fill 0.3s linear 0.03s;
+}
+
+.main-body {
+  fill: transparent;
+  -webkit-transition: fill 0.3s linear;
+  -o-transition: fill 0.3s linear;
+  transition: fill 0.3s linear;
+}
+
+.card__icon-button:hover .core {
+  fill: var(--accent-color);
+  -webkit-transition-delay: 0;
+       -o-transition-delay: 0;
+          transition-delay: 0;
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--accent-color);
+  -webkit-transition-delay: 0.05s;
+       -o-transition-delay: 0.05s;
+          transition-delay: 0.05s;
+}
+
+.card__icon-button:active .core {
+  fill: var(--main-body-heart-color);
+  -webkit-transition: fill 0.3s linear;
+  -o-transition: fill 0.3s linear;
+  transition: fill 0.3s linear;
+}
+
+.card__icon-button:active .main-body {
+  fill: var(--main-body-heart-color);
+  -webkit-transition: fill 0.3s linear 0.05s;
+  -o-transition: fill 0.3s linear 0.05s;
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--main-body-heart-color);
+  -webkit-transition: fill 0.3s linear;
+  -o-transition: fill 0.3s linear;
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--main-body-heart-color);
+  -webkit-transition: fill 0.3s linear 0.05s;
+  -o-transition: fill 0.3s linear 0.05s;
+  transition: fill 0.3s linear 0.05s;
+}
+
+.contour {
+  -webkit-transition: fill 0.1s;
+  -o-transition: fill 0.1s;
+  transition: fill 0.1s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--main-body-heart-color);
+  -webkit-transition: fill 0.3s linear 0.06s;
+  -o-transition: fill 0.3s linear 0.06s;
+  transition: fill 0.3s linear 0.06s;
+}
+
+@-webkit-keyframes scale-heart {
+  to {
+    scale: 1.5;
+  }
+}
+
+@keyframes scale-heart {
+  to {
+    scale: 1.5;
+  }
+}
+
+@-webkit-keyframes sparks {
+  to {
+    fill: var(--main-body-heart-color);
+  }
+}
+
+@keyframes sparks {
+  to {
+    fill: var(--main-body-heart-color);
+  }
+}
+
+.like-icon.is-liked .heart {
+  -webkit-animation: scale-heart 0.3s ease-in 0.1s alternate 2;
+          animation: scale-heart 0.3s ease-in 0.1s alternate 2;
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+}
+
+.like-icon.is-liked .sparks {
+  -webkit-animation: sparks 0.4s 0.3s ease-in alternate 2;
+          animation: sparks 0.4s 0.3s ease-in alternate 2;
+}
+
+.button {
+  -webkit-transition: -webkit-box-shadow 0.3s ease;
+  transition: -webkit-box-shadow 0.3s ease;
+  -o-transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  border: 2px solid currentColor;
+  background-color: transparent;
+}
+
+.button-save {
+  background-color: var(--bg-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 50px auto 100px;
+  gap: 8px;
+  padding: 15px 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid currentColor;
+}
+
+.floppy-icon {
+  width: 21px;
+  height: 21px;
+  color: var(--difference-button-color);
+  mix-blend-mode: difference;
+}
+
+.button__text {
+  font-family: var(--accent-font);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 0.9;
+  position: relative;
+  color: var(--difference-button-color);
+  mix-blend-mode: difference;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: var(--accent-color);
+  -webkit-transform: scale(0, 1);
+      -ms-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transform-origin: left;
+      -ms-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  -o-transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+.button:hover::before {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+
+.button:focus {
+  outline: none;
+  -webkit-box-shadow: 2px 2px 0 var(--accent-color);
+          box-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.modal-floppy {
+  background-color: var(--bg-color);
+  border: 2px solid var(--accent-color);
+  padding: 30px;
+  max-width: 350px;
+}
+
+.modal-floppy[open] .modal-floppy__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.icon-container {
+  width: 82px;
+  height: 39px;
+}
+
+.floppy-icon-modal {
+  width: 100%;
+  height: 100%;
+  fill: var(--accent-color);
+}
+
+.modal-floppy_header {
+  color: var(--accent-color);
+  font-family: var(--accent-font);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.modal-floppy-button {
+  width: 100%;
+  background-color: transparent;
+  height: 38px;
+  border: 2px solid var(--accent-color);
+}
+
+.modal-floppy::-webkit-backdrop {
+  background-color: rgb(0 0 0 / 0.3);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+}
+
+.modal-floppy::backdrop {
+  background-color: rgb(0 0 0 / 0.3);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+}
+
+.cards-list {
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+.cards-list .card:not(:first-of-type) {
+  margin-top: 50px;
+}
+
+@media (max-width: 576px) {
+  .button-save {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .floppy-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .modal-floppy {
+    padding: 30px 40px;
+    width: 340px;
+  }
+}
