@@ -53,7 +53,7 @@ ol {
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--main-font);
+  font-family: var(--main-font), sans-serif;
   font-variation-settings: var(--main-card-weight);
   color: var(--accent-color);
   background-image: var(--bg-gradient);

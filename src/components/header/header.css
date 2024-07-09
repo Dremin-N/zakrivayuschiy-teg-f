@@ -7,16 +7,26 @@
   padding: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem) 0 25px;
   background-color: var(--bg-color);
   border: 2px solid var(--accent-color);
+  font-family: var(--accent-font), fantasy;
+  text-transform: uppercase;
 }
 
-.header__title {
+.logo {
   font-family: var(--accent-font);
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   text-align: center;
   font-weight: 400;
 }
 
-.header__title-accent {
+.logo[href="#"] {
+  pointer-events: none;
+}
+
+.logo[href="#"]:focus {
+  outline: none;
+}
+
+.header__title {
   display: block;
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   margin-top: 20px;

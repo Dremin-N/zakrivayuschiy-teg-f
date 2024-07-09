@@ -10,5 +10,5 @@ mixin card(imgUrl, altName, title, desc1, desc2, label, filter)
       p.card__desc= desc2
     .card__buttons
       include ../buttons/card__icon-button/card__icon-button
-      button.card__like-button.button
+      button.card__like-button.button(type="button")
         span.button__text Like

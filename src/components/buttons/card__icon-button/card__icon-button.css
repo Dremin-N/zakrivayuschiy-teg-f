@@ -1,6 +1,5 @@
 .card__icon-button {
-  width: 38px;
-  height: 38px;
+  height: 100%;
   display: inline-block;
   background-color: transparent;
   border: 2px solid transparent;
@@ -62,7 +61,7 @@
 }
 
 .contour {
-  transition: fill 0.1s;
+  transition: fill 0.1s linear;
 }
 
 .like-icon.is-liked .contour {
@@ -83,10 +82,10 @@
 }
 
 .like-icon.is-liked .heart {
-  animation: scale-heart 0.3s ease-in 0.1s alternate 2;
+  animation: scale-heart 0.3s ease-in 0.1s alternate;
   transform-origin: center;
 }
 
 .like-icon.is-liked .sparks {
-  animation: sparks 0.4s 0.3s ease-in alternate 2;
+  animation: sparks 0.3s 0.3s ease-in alternate;
 }

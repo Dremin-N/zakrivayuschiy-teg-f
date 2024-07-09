@@ -8,7 +8,7 @@
 .card__title {
   font-variation-settings: var(--accent-card-weight);
   font-size: inherit;
-  padding: 3px 10px;
+  padding: 5px 10px;
   border-bottom: 2px var(--accent-color);
 }
 
@@ -18,7 +18,8 @@
 
 .card__image {
   width: 100%;
-  background-size: contain;
+  object-fit: cover;
+  object-position: center;
   aspect-ratio: 1 / 1;
   border-top: 2px solid var(--accent-color);
   border-bottom: 2px solid var(--accent-color);
@@ -53,18 +54,24 @@
   padding: 25px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 27px;
+}
+
+.card__desc {
+  line-height: 1.17;
 }
 
 .card__buttons {
   display: flex;
   justify-content: end;
-  padding: 0 25px 25px 0;
+  margin: 0 25px 25px 0;
   gap: 5px;
+  height: 38px;
 }
 
 .card__like-button {
   width: 130px;
+  height: 100%;
 }
 
 .brightness {

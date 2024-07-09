@@ -8,7 +8,7 @@
 }
 
 @font-face {
-  font-family: "Press Start 2P Regular";
+  font-family: "PressStart2P";
   src: local("Press Start 2P Regular"),
     url("../fonts/PressStart2P-Regular.woff") format("woff");
   font-display: swap;
@@ -19,7 +19,7 @@
 
 :root {
   --main-font: Inter-Variable;
-  --accent-font: "Press Start 2P Regular";
+  --accent-font: "PressStart2P";
   --main-card-weight: "wght" 400;
   --accent-card-weight: "wght" 700;
   --bg-color: #fff;
@@ -27,9 +27,13 @@
   --accent-color: #000;
   --contour-color: #000;
   --main-body-heart-color: #f00;
-  --bg-gradient: repeating-linear-gradient(to right, #d3d3d3, transparent 4px),
-    repeating-linear-gradient(to bottom, #d3d3d3, transparent 4px),
-    linear-gradient(to bottom, #e7e7e7 1vh, #1a1a1a);
+  --bg-gradient: repeating-linear-gradient(
+      to right,
+      #d3d3d3 0 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
+    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
 }
 
 :root.theme-light {
@@ -40,9 +44,13 @@
   --contour-color: #000;
   --accent-card-weight: "wght" 700;
   --main-body-heart-color: #f00;
-  --bg-gradient: repeating-linear-gradient(to right, #d3d3d3, transparent 4px),
-    repeating-linear-gradient(to bottom, #d3d3d3, transparent 4px),
-    linear-gradient(to bottom, #e7e7e7 1vh, #1a1a1a);
+  --bg-gradient: repeating-linear-gradient(
+      to right,
+      #d3d3d3 0 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
+    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
 }
 
 :root.theme-dark {
@@ -53,8 +61,12 @@
   --difference-button-color: #00cc14;
   --contour-color: #00cc14;
   --main-body-heart-color: #f00;
-  --bg-gradient: repeating-linear-gradient(to right, #000, transparent 4px),
-    repeating-linear-gradient(to bottom, #000, transparent 4px),
+  --bg-gradient: repeating-linear-gradient(
+      to right,
+      #000 0 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(to bottom, #000 0 2px, transparent 2px 4px),
     linear-gradient(to bottom, #007f0c, #004306);
 }
 
@@ -115,7 +127,7 @@ ol {
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--main-font);
+  font-family: var(--main-font), sans-serif;
   font-variation-settings: var(--main-card-weight);
   color: var(--accent-color);
   background-image: var(--bg-gradient);
@@ -139,23 +151,34 @@ ol {
   padding: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem) 0 25px;
   background-color: var(--bg-color);
   border: 2px solid var(--accent-color);
+  font-family: var(--accent-font), fantasy;
+  text-transform: uppercase;
 }
 
-.header__title {
+.logo {
   font-family: var(--accent-font);
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   text-align: center;
   font-weight: 400;
 }
 
-.header__title-accent {
+.logo[href="#"] {
+  pointer-events: none;
+}
+
+.logo[href="#"]:focus {
+  outline: none;
+}
+
+.header__title {
   display: block;
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   margin-top: 20px;
 }
 
 .header__theme-menu {
-  margin-top: 25px;
+  margin-top: 24px;
+  padding-left: 15px;
 }
 
 .theme-menu__list {
@@ -166,8 +189,8 @@ ol {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 15px;
-  font-family: var(--accent-font);
+  gap: 11px;
+  font-family: var(--accent-font), fantasy;
 }
 
 .theme-menu__button {
@@ -212,9 +235,6 @@ ol {
 }
 
 .theme-menu__button:disabled {
-  -webkit-transition: opacity 0.3s ease;
-  -o-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
   pointer-events: none;
 }
 
@@ -258,11 +278,15 @@ ol {
     --accent-color: #00cc14;
     --main-card-weight: "wght" 465;
     --accent-card-weight: "wght" 785;
-    --difference-button-color: #000;
+    --difference-button-color: #00cc14;
     --contour-color: #00cc14;
     --main-body-heart-color: #f00;
-    --bg-gradient: repeating-linear-gradient(to right, #000, transparent 4px),
-      repeating-linear-gradient(to bottom, #000, transparent 4px),
+    --bg-gradient: repeating-linear-gradient(
+        to right,
+        #000 0 2px,
+        transparent 2px 4px
+      ),
+      repeating-linear-gradient(to bottom, #000 0 2px, transparent 2px 4px),
       linear-gradient(to bottom, #007f0c, #004306);
   }
 }

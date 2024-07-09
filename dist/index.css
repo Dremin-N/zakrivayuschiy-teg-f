@@ -8,7 +8,7 @@
 .card__title {
   font-variation-settings: var(--accent-card-weight);
   font-size: inherit;
-  padding: 3px 10px;
+  padding: 5px 10px;
   border-bottom: 2px var(--accent-color);
 }
 
@@ -18,7 +18,10 @@
 
 .card__image {
   width: 100%;
-  background-size: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   aspect-ratio: 1 / 1;
   border-top: 2px solid var(--accent-color);
   border-bottom: 2px solid var(--accent-color);
@@ -58,7 +61,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 25px;
+  gap: 27px;
+}
+
+.card__desc {
+  line-height: 1.17;
 }
 
 .card__buttons {
@@ -68,12 +75,14 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: end;
-  padding: 0 25px 25px 0;
+  margin: 0 25px 25px 0;
   gap: 5px;
+  height: 38px;
 }
 
 .card__like-button {
   width: 130px;
+  height: 100%;
 }
 
 .brightness {
@@ -117,8 +126,7 @@
 }
 
 .card__icon-button {
-  width: 38px;
-  height: 38px;
+  height: 100%;
   display: inline-block;
   background-color: transparent;
   border: 2px solid transparent;
@@ -198,9 +206,9 @@
 }
 
 .contour {
-  -webkit-transition: fill 0.1s;
-  -o-transition: fill 0.1s;
-  transition: fill 0.1s;
+  -webkit-transition: fill 0.1s linear;
+  -o-transition: fill 0.1s linear;
+  transition: fill 0.1s linear;
 }
 
 .like-icon.is-liked .contour {
@@ -235,16 +243,16 @@
 }
 
 .like-icon.is-liked .heart {
-  -webkit-animation: scale-heart 0.3s ease-in 0.1s alternate 2;
-          animation: scale-heart 0.3s ease-in 0.1s alternate 2;
+  -webkit-animation: scale-heart 0.3s ease-in 0.1s alternate;
+          animation: scale-heart 0.3s ease-in 0.1s alternate;
   -webkit-transform-origin: center;
       -ms-transform-origin: center;
           transform-origin: center;
 }
 
 .like-icon.is-liked .sparks {
-  -webkit-animation: sparks 0.4s 0.3s ease-in alternate 2;
-          animation: sparks 0.4s 0.3s ease-in alternate 2;
+  -webkit-animation: sparks 0.3s 0.3s ease-in alternate;
+          animation: sparks 0.3s 0.3s ease-in alternate;
 }
 
 .button {
@@ -281,7 +289,7 @@
 }
 
 .button__text {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   font-weight: 400;
   font-size: 14px;
   line-height: 0.9;
@@ -337,24 +345,21 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 26px;
   gap: 20px;
 }
 
-.icon-container {
-  width: 82px;
-  height: 39px;
-}
-
 .floppy-icon-modal {
-  width: 100%;
-  height: 100%;
-  fill: var(--accent-color);
+  width: 39px;
+  height: 39px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  color: var(--accent-color);
 }
 
 .modal-floppy_header {
   color: var(--accent-color);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.5;
@@ -369,15 +374,15 @@
 }
 
 .modal-floppy::-webkit-backdrop {
-  background-color: rgb(0 0 0 / 0.3);
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
+  background-color: rgb(0 0 0 / 0.75);
 }
 
 .modal-floppy::backdrop {
-  background-color: rgb(0 0 0 / 0.3);
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
+  background-color: rgb(0 0 0 / 0.75);
+}
+
+.modal-floppy-button .button__text {
+  text-transform: uppercase;
 }
 
 .cards-list {

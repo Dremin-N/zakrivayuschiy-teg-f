@@ -1,12 +1,13 @@
 .header__theme-menu {
-  margin-top: 25px;
+  margin-top: 24px;
+  padding-left: 15px;
 }
 
 .theme-menu__list {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  font-family: var(--accent-font);
+  gap: 11px;
+  font-family: var(--accent-font), fantasy;
 }
 
 .theme-menu__button {
@@ -39,7 +40,6 @@
 }
 
 .theme-menu__button:disabled {
-  transition: opacity 0.3s ease;
   pointer-events: none;
 }
 
